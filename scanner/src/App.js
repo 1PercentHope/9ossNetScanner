@@ -1,10 +1,15 @@
-import Scanner from './Components/Scanner/Scanner.jsx'
+import Scanner from "./Components/Scanner/Scanner.jsx";
+import SignIn from "./Components/SignIn/SignIn.jsx";
+import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <Scanner />
-    </div>
+    <Router>
+      <root>
+        <Route path="/" exact={true} component={SignIn} />
+        <Route path="/scanner" component={Scanner} />
+      </root>
+    </Router>
   );
 }
 

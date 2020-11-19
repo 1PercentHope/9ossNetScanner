@@ -1,6 +1,7 @@
 .main{
     height: 100vh;
     width: 100vw;
+    /* background-image: url(./screen-2.jpg); */
 }
 .logIn{
     position: relative;
@@ -12,10 +13,12 @@
 .logIn input{
     margin-top: 5vh;
     display: block;
+
 }
 .navBar{
-    border-bottom: 1px solid rgb(243, 241, 241);
-    box-shadow: 0px 0px 1px 2px rgba(220, 220, 220,0.7);
+    background: rgb(202, 75, 75);
+    border-bottom: 2px solid rgb(202, 75, 75);;
+    box-shadow: 0px 0px 1px 2px rgba(20, 19, 19, 0.239);
     height:10vh;
     width: 100vw;
 }
@@ -26,21 +29,33 @@
     left: 5vw;
     top: 2vh;
 }
-.line1, .line2, .line3 {
-    background: white;
-    width: 30px;
-    height: 3px;
-    margin-top: 1vh;
-
+.title {
+    position: relative;
+    top: -5vh;
+    border: 1px solid white;
+    z-index: 10;
+    height: 9vh;
+}
+.title2{
+    position: relative;
+    top: -13vh;
+    border: 1px solid white;
+    z-index: 10;
+    height: 4.43vh;
+    width: 22vw
 
 }
 .logo{
     height: 30vh;
     width: 30vw;
-    background: url(./image.png);
 
 }
-.image{
-
+.reminder{
+    width: 70vw;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    top:10vh;
+    color:rgba(0, 0, 0, 0.796)
 
 }

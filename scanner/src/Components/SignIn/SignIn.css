@@ -38,38 +38,43 @@
   display: block;
   margin: 0;
   padding: var(--inputPaddingV) var(--inputPaddingH);
-  color: inherit;
+  color: black;
+  text-transform: uppercase;
   width: 100%;
   font-family: inherit;
-  font-size: 100%;
+  font-size: 70%;
   font-weight: inherit;
   line-height: var(--inputLineHeight);
-  border: 2px solid pink;
+  border: 1px solid rgb(202, 75, 75);
   border-radius: 0.4rem;
   transition: box-shadow var(--transitionDuration);
   width: 30vw;
+  background: rgba(255, 255, 255, 0.782);
 }
 .inputButton{
     display: block;
     margin: 0;
     padding: var(--inputPaddingV) var(--inputPaddingH);
-    color: inherit;
+    color:  rgb(202, 75, 75);
     font-family: inherit;
     text-transform: uppercase;
     font-size: 70%;
     font-weight: bold;
     line-height: var(--inputLineHeight);
-    border: none;
+    border: 1px solid rgb(202, 75, 75);
     border-radius: 0.4rem;
     transition: box-shadow var(--transitionDuration);
     width: 30vw;
-    background-color: pink;
+    background: rgba(255, 255, 255, 0.782);
     
 }
 
 .inputButton:active{
-    opacity: 0;
-    transition: 0.05s;
+  background: rgba(202, 75, 75,0.3);
   
 }
 
+.loginText{
+  border-bottom: 3px solid rgb(202, 75, 75);
+  display: inline;
+}

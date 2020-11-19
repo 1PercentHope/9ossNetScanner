@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
 import sound from "./sound.mp3";
+import { logout } from "../../actions/auth";
+
 
 class Scanner extends Component {
   constructor(props) {
@@ -16,6 +18,7 @@ class Scanner extends Component {
     };
 
     this.handleScan = this.handleScan.bind(this);
+    this.loggingOut = this.loggingOut.bind(this)
   }
   async handleScan(data) {
     this.setState({
@@ -62,7 +65,9 @@ class Scanner extends Component {
       }
     }
   }
-
+  loggingOut(){
+    this.props.logout()
+  }
   render() {
     const previewStyle = {
       height: 240,
@@ -83,7 +88,7 @@ class Scanner extends Component {
         <p>{this.state.result}</p>
         <div className='logOut'>
           <Link to="/">
-            <button >LOG OUT</button>
+            <button onClick={this.loggingOut}>LOG OUT</button>
           </Link>
         </div>
       </div>

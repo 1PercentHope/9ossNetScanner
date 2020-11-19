@@ -18,7 +18,6 @@ class Scanner extends Component {
     this.handleScan = this.handleScan.bind(this);
   }
   async handleScan(data) {
-    console.log(data);
     this.setState({
       result: data,
     });
@@ -71,20 +70,20 @@ class Scanner extends Component {
     };
 
     return (
-      <div>
+      <div className="Main">
         <div>
           <QrReader
             delay={this.state.delay}
             style={previewStyle}
             onError={this.handleError}
             onScan={this.handleScan}
-            delay={5000}
+            delay={2000}
           />
         </div>
         <p>{this.state.result}</p>
-        <div>
+        <div className='logOut'>
           <Link to="/">
-            <button>LOG OUT</button>
+            <button >LOG OUT</button>
           </Link>
         </div>
       </div>

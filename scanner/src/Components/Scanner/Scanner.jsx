@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import QrReader from "react-qr-reader";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Swal from "sweetalert2";
+import sound from "./sound.mp3";
 
 class Scanner extends Component {
   constructor(props) {
@@ -16,6 +18,7 @@ class Scanner extends Component {
     this.handleScan = this.handleScan.bind(this);
   }
   async handleScan(data) {
+    console.log(data);
     this.setState({
       result: data,
     });
@@ -32,9 +35,28 @@ class Scanner extends Component {
             console.log(res);
             this.setState({ statusText: res.statusText });
             if (res.statusText.toLowerCase() === "ok") {
-              alert("ok");
+              Swal.fire({
+                icon: "Acces!",
+                text: "You clicked the button!",
+                title: "success",
+                onOpen: function () {
+                  var zippi = new Audio(
+                    "http://limonte.github.io/mp3/zippi.mp3"
+                  );
+                  zippi.play();
+                },
+              });
             } else {
-              alert("NO");
+              Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Something went wrong!",
+                showCancelButton: true,
+                onOpen: function () {
+                  var zippi = new Audio(sound);
+                  zippi.play();
+                },
+              });
             }
           })
           .catch((err) => console.log(err));
@@ -56,6 +78,7 @@ class Scanner extends Component {
             style={previewStyle}
             onError={this.handleError}
             onScan={this.handleScan}
+            delay={5000}
           />
         </div>
         <p>{this.state.result}</p>

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import QrReader from "react-qr-reader";
 import { Link } from "react-router-dom";
-import Axios from "axios";
+import axios from "axios";
 
 class Scanner extends Component {
   constructor(props) {
@@ -9,21 +9,39 @@ class Scanner extends Component {
     this.state = {
       delay: 100,
       result: "No result",
+      statusText: "",
+      response: {},
     };
 
     this.handleScan = this.handleScan.bind(this);
   }
-  handleScan(data) {
+  async handleScan(data) {
     this.setState({
       result: data,
     });
+
+    if (data !== null && data !== undefined) {
+      let code = data.substring(7);
+      if (code !== undefined) {
+        console.log(code);
+        await axios
+          .delete("http://localhost:5000/thirdp/scan", {
+            data: { code },
+          })
+          .then((res) => {
+            console.log(res);
+            this.setState({ statusText: res.statusText });
+            if (res.statusText.toLowerCase() === "ok") {
+              alert("ok");
+            } else {
+              alert("NO");
+            }
+          })
+          .catch((err) => console.log(err));
+      }
+    }
   }
-  deleteRequest = () => {
-    Axios.delete("http://localhost:5000//thirdp/logout");
-  };
-  handleError(err) {
-    console.error(err);
-  }
+
   render() {
     const previewStyle = {
       height: 240,
@@ -40,7 +58,6 @@ class Scanner extends Component {
             onScan={this.handleScan}
           />
         </div>
-
         <p>{this.state.result}</p>
         <div>
           <Link to="/">

@@ -28,7 +28,7 @@ class Scanner extends Component {
       if (code !== undefined) {
         console.log(code);
         await axios
-          .delete("http://localhost:5000/thirdp/scan", {
+          .delete("http://192.168.43.251:5000/thirdp/scan", {
             data: { code },
           })
           .then((res) => {

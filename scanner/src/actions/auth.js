@@ -4,7 +4,7 @@ import { LOGIN_SUCCESS, LOGOUT } from "./types";
 // login user
 export const login = (identifier, password) => async (dispatch) => {
   axios
-    .post("http://localhost:5000/thirdp/signin", { identifier, password })
+    .post("http://192.168.43.251:5000/thirdp/signin", { identifier, password })
     .then((res) => {
       dispatch({
         type: LOGIN_SUCCESS,

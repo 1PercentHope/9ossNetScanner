@@ -87,10 +87,10 @@ class Scanner extends Component {
         </div>
         <p>{this.state.result}</p>
         <div className='logOut'>
-          <Link to="/">
-            <button onClick={this.loggingOut}>LOG OUT</button>
-          </Link>
-        </div>
+            <Link to="/">
+              <button onClick={this.loggingOut}>LOG OUT</button>
+            </Link>
+          </div>
       </div>
     );
   }

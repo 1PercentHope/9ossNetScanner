@@ -3,7 +3,7 @@ import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import axios from "axios";
 import { login } from "../../actions/auth";
-
+import './SignIn.css'
 class SignIn extends Component {
   constructor(props) {
     super(props);
@@ -31,19 +31,22 @@ class SignIn extends Component {
       return <Redirect to="/scanner"></Redirect>;
 
     return (
-      <div>
+      <div className='inputContainer'>
         <form action="" onSubmit={this.checkUser}>
           <input
-            name="password"
-            onChange={this.onChangeVal}
-            placeholder="enter your secret id"
-          ></input>
-          <input
+          className='inputId'
             name="id"
             onChange={this.onChangeVal}
             placeholder="enter your secret id"
           ></input>
-          <input type="submit" value="login" />
+          <input
+          className='inputId'
+            name="password"
+            type='password'
+            onChange={this.onChangeVal}
+            placeholder="enter your password"
+          ></input>
+          <input type="submit" value="login" className='inputButton'/>
         </form>
       </div>
     );

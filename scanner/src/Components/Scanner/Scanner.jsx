@@ -5,7 +5,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import sound from "./sound.mp3";
 import { logout } from "../../actions/auth";
-
+import { connect } from "react-redux";
 
 class Scanner extends Component {
   constructor(props) {
@@ -18,7 +18,7 @@ class Scanner extends Component {
     };
 
     this.handleScan = this.handleScan.bind(this);
-    this.loggingOut = this.loggingOut.bind(this)
+    this.loggingOut = this.loggingOut.bind(this);
   }
   async handleScan(data) {
     this.setState({
@@ -30,7 +30,7 @@ class Scanner extends Component {
       if (code !== undefined) {
         console.log(code);
         await axios
-          .delete("http://192.168.43.251:5000/thirdp/scan", {
+          .delete("http://localhost:5000/thirdp/scan", {
             data: { code },
           })
           .then((res) => {
@@ -65,8 +65,8 @@ class Scanner extends Component {
       }
     }
   }
-  loggingOut(){
-    this.props.logout()
+  loggingOut() {
+    this.props.logout();
   }
   render() {
     const previewStyle = {
@@ -76,6 +76,13 @@ class Scanner extends Component {
 
     return (
       <div className="Main">
+        <nav className="navBar">
+          <div className="icon">
+            <h1 className="title">Qr-</h1>
+            <h1 className="title2">Scanner</h1>
+            <button onClick={this.loggingOut}>log out </button>
+          </div>
+        </nav>
         <div>
           <QrReader
             delay={this.state.delay}
@@ -86,14 +93,18 @@ class Scanner extends Component {
           />
         </div>
         <p>{this.state.result}</p>
-        <div className='logOut'>
-            <Link to="/">
-              <button onClick={this.loggingOut}>LOG OUT</button>
-            </Link>
-          </div>
+        <div className="logOut">
+          <Link to="/">
+            <button onClick={this.loggingOut}>LOG OUT</button>
+          </Link>
+        </div>
       </div>
     );
   }
 }
 
-export default Scanner;
+const mapStatetoProps = (state) => ({
+  auth: state.auth,
+});
+
+export default connect(mapStatetoProps, { logout })(Scanner);

@@ -24,7 +24,7 @@ class SignIn extends Component {
   checkUser = (e) => {
     e.preventDefault();
     const { id, password } = this.state;
-    this.props.login(id, password);
+    this.props.login(id, password).then((res) => console.log(res));
   };
   render() {
     if (this.props.auth.isAuthenticated)

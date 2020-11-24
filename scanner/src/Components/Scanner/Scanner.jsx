@@ -20,16 +20,18 @@ class Scanner extends Component {
     this.handleScan = this.handleScan.bind(this);
     this.loggingOut = this.loggingOut.bind(this)
   }
-  async handleScan(data) {
+  handleScan(data) {
     this.setState({
       result: data,
     });
 
     if (data !== null && data !== undefined) {
-      let code = data.substring(7);
+      console.log(data)
+      // let code = data.substring(7);
+      let code =  data
       if (code !== undefined) {
         console.log(code);
-        await axios
+         axios
           .delete("http://localhost:5000/thirdp/scan", {
             data: { code },
           })
@@ -67,6 +69,7 @@ class Scanner extends Component {
   }
   loggingOut(){
     this.props.logout()
+    window.location.reload(true)
   }
   render() {
     const previewStyle = {
@@ -82,7 +85,9 @@ class Scanner extends Component {
             style={previewStyle}
             onError={this.handleError}
             onScan={this.handleScan}
-            delay={2000}
+            delay={1000}
+            style={{widht: '100%'}}
+            resolution={1000}
           />
         </div>
         <p>{this.state.result}</p>

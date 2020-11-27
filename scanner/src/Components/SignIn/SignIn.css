@@ -1,3 +1,13 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+body {
+  display: flex;
+}
+
 :root {
   /* generic */
   --gutterSm: 0.4rem;
@@ -52,7 +62,6 @@
 }
 .inputButton {
   display: block;
-  margin: 0;
   padding: var(--inputPaddingV) var(--inputPaddingH);
   color: rgb(202, 75, 75);
   font-family: inherit;
@@ -63,8 +72,9 @@
   border: 1px solid rgb(202, 75, 75);
   border-radius: 0.4rem;
   transition: box-shadow var(--transitionDuration);
-  width: 30vw;
   background: rgba(255, 255, 255, 0.782);
+  width: 250px;
+  margin: 0 auto;
 }
 
 .inputButton:active {
@@ -74,4 +84,35 @@
 .loginText {
   border-bottom: 3px solid rgb(202, 75, 75);
   display: inline;
+}
+.inputContainer {
+  position: relative;
+  top: -10vh;
+  float: left;
+  color: #1b1919;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  top: 0; /* Position the navbar at the top of the page */
+}
+.reminder {
+  width: 70vw;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  top: 10vh;
+  color: rgba(0, 0, 0, 0.796);
+}
+.parent {
+  display: table;
+  width: 100%;
+}
+.form {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  margin: auto;
+  display: table;
+  margin-top: 10%;
 }

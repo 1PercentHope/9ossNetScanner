@@ -49,22 +49,24 @@ class SignIn extends Component {
             <p>And if you have a licence from the admin you can</p>
           </center>
         </div>
-        <form action="" onSubmit={this.checkUser}>
-          <input
-            className="inputId"
-            name="id"
-            onChange={this.onChangeVal}
-            placeholder="enter your secret id"
-          ></input>
-          <input
-            className="inputId"
-            name="password"
-            type="password"
-            onChange={this.onChangeVal}
-            placeholder="enter your password"
-          ></input>
-          <input type="submit" value="login" className="inputButton" />
-        </form>
+        <div className="parent">
+          <form action="" onSubmit={this.checkUser} className="form">
+            <input
+              className="inputId"
+              name="id"
+              onChange={this.onChangeVal}
+              placeholder="enter your secret id"
+            ></input>
+            <input
+              className="inputId"
+              name="password"
+              type="password"
+              onChange={this.onChangeVal}
+              placeholder="enter your password"
+            ></input>
+            <input type="submit" value="login" className="inputButton" />
+          </form>
+        </div>
       </div>
     );
   }

@@ -24,7 +24,7 @@ class SignIn extends Component {
   checkUser = (e) => {
     e.preventDefault();
     const { id, password } = this.state;
-    this.props.login(id, password);
+    this.props.login(id, password).then((res) => console.log(res));
   };
   render() {
     if (this.props.auth.isAuthenticated)
@@ -32,11 +32,13 @@ class SignIn extends Component {
 
     return (
       <div className="inputContainer">
+
         <nav className="navBar">
           <div className="icon">
             <h1 className="title">Qr-</h1>
             <h1 className="title2">Scanner</h1>
           </div>
+
         </nav>
 
         <div className="reminder">

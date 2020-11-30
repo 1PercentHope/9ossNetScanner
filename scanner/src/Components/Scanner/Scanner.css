@@ -1,8 +1,8 @@
-.main{
-    position: absolute;
-    top: -70vh;
+.scanner {
+  position: absolute;
+  top: -10vh;
 }
-.logOut{
-    position: relative;
-    top: 50vh;
+.logOut {
+  position: relative;
+  top: 10vh;
 }

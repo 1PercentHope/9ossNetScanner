@@ -1,3 +1,16 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background-image: url("./warning.jpg");
+  background-position: right bottom, left top;
+  background-repeat: no-repeat, repeat;
+}
+body {
+  display: flex;
+}
+
 :root {
   /* generic */
   --gutterSm: 0.4rem;
@@ -44,7 +57,7 @@
   font-size: 70%;
   font-weight: inherit;
   line-height: var(--inputLineHeight);
-  border: 1px solid rgb(202, 75, 75);
+  border: 1px solid rgb(17, 16, 16);
   border-radius: 0.4rem;
   transition: box-shadow var(--transitionDuration);
   width: 30vw;
@@ -52,20 +65,115 @@
 }
 .inputButton {
   display: block;
+
   margin: 0;
   padding: var(--inputPaddingV) var(--inputPaddingH);
   color: rgb(202, 75, 75);
+
   font-family: inherit;
   text-transform: uppercase;
   font-size: 70%;
   font-weight: bold;
   line-height: var(--inputLineHeight);
+
+  border: 1px solid rgb(17, 15, 15);
+  border-radius: 0.4rem;
+  transition: box-shadow var(--transitionDuration);
+  background: rgba(255, 255, 255, 0.782);
+  width: 25vw;
+  margin: 0 auto;
+}
+@import url("https://fonts.googleapis.com/css?family=Roboto:700");
+
+/* body {
+  margin: 0px;
+  font-family: "Roboto";
+  text-align: center;
+} */
+
+#container {
+  color: rgb(22, 18, 18);
+  text-transform: uppercase;
+  font-size: 36px;
+  font-weight: bold;
+  position: relative;
+  top: -10vh;
+  width: 100%;
+  display: block;
+}
+
+#flip {
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+  top: 4vh;
+}
+
+#flip > div > div {
+  color: #fff;
+  padding: 4px 12px;
+  height: 45px;
+  margin-top: 5vh;
+  margin-bottom: 45px;
+  display: inline-block;
+}
+
+#flip div:first-child {
+  animation: show 5s linear infinite;
+}
+
+#flip div div {
+  background: #ee5903;
+}
+#flip div:first-child div {
+  background: #328fb1;
+}
+#flip div:last-child div {
+  background: #d80b49;
+}
+
+@keyframes show {
+  0% {
+    margin-top: -270px;
+  }
+  5% {
+    margin-top: -180px;
+  }
+  33% {
+    margin-top: -180px;
+  }
+  38% {
+    margin-top: -90px;
+  }
+  66% {
+    margin-top: -90px;
+  }
+  71% {
+    margin-top: 0px;
+  }
+  99.99% {
+    margin-top: 0px;
+  }
+  100% {
+    margin-top: -270px;
+  }
+}
+
+p {
+  position: fixed;
+  width: 100%;
+  bottom: 30px;
+  font-size: 12px;
+  color: #999;
+  margin-top: 200px;
+
   border: 1px solid rgb(202, 75, 75);
   border-radius: 0.4rem;
   transition: box-shadow var(--transitionDuration);
   width: 30vw;
   background: rgba(255, 255, 255, 0.782);
 }
+
 
 .inputButton:active {
   background: rgba(202, 75, 75, 0.3);
@@ -74,4 +182,54 @@
 .loginText {
   border-bottom: 3px solid rgb(202, 75, 75);
   display: inline;
+}
+.warning {
+  text-decoration: underline;
+  text-transform: capitalize;
+  font-family: "Times New Roman", Times, serif;
+}
+.inputContainer {
+  word-break: break-all;
+  top: -10vh;
+  float: center;
+  color: #1b1919;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  top: 0;
+  background-color: rgb(214, 165, 73);
+  opacity: 0.85;
+  border-radius: 15px;
+  padding: 20px;
+  position: relative;
+  left: 30px;
+  width: 50%;
+  height: 100%;
+  padding: top;
+  /* Position the navbar at the top of the page */
+}
+.reminder {
+  width: 70vw;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  top: 10vh;
+  color: rgba(0, 0, 0, 0.796);
+}
+.parent {
+  display: table;
+  width: 100%;
+}
+.form {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  margin: auto;
+  display: table;
+  margin-top: 10%;
+}
+.verify {
+  position: relative;
+  top: 8vh;
 }

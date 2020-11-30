@@ -32,50 +32,41 @@ class SignIn extends Component {
 
     return (
       <div className="inputContainer">
-        {/* <nav className="navBar">
+
+        <nav className="navBar">
           <div className="icon">
             <h1 className="title">Qr-</h1>
             <h1 className="title2">Scanner</h1>
           </div>
-        </nav> */}
+
+        </nav>
 
         <div className="reminder">
           <center>
-            <div id="container">
-              scan
-              <div id="flip">
-                <div>
-                  <div>qr</div>
-                </div>
-                <div>
-                  <div>code</div>
-                </div>
-                <div>
-                  <div>soccer</div>
-                </div>
-              </div>
-              <div className="verify">VERIFY!</div>
-            </div>
+            <h1>Reminder</h1>
+            <p>
+              This app is mainly for Qr codes scanning. Please leave the app if
+              you don't have a permission to use it.
+            </p>
+            <p>And if you have a licence from the admin you can</p>
           </center>
         </div>
-        <div className="parent">
-          <form action="" onSubmit={this.checkUser} className="form">
-            <input
-              className="inputId"
-              name="id"
-              onChange={this.onChangeVal}
-              placeholder="enter your secret id"
-            ></input>
-            <input
-              className="inputId"
-              name="password"
-              type="password"
-              onChange={this.onChangeVal}
-              placeholder="enter your password"
-            ></input>
-            <input type="submit" value="login" className="inputButton" />
-          </form>
-        </div>
+        <form action="" onSubmit={this.checkUser}>
+          <input
+            className="inputId"
+            name="id"
+            onChange={this.onChangeVal}
+            placeholder="enter your secret id"
+          ></input>
+          <input
+            className="inputId"
+            name="password"
+            type="password"
+            onChange={this.onChangeVal}
+            placeholder="enter your password"
+          ></input>
+          <input type="submit" value="login" className="inputButton" />
+        </form>
       </div>
     );
   }

@@ -65,13 +65,17 @@ body {
 }
 .inputButton {
   display: block;
+
+  margin: 0;
   padding: var(--inputPaddingV) var(--inputPaddingH);
-  color: rgb(31, 28, 28);
+  color: rgb(202, 75, 75);
+
   font-family: inherit;
   text-transform: uppercase;
   font-size: 70%;
   font-weight: bold;
   line-height: var(--inputLineHeight);
+
   border: 1px solid rgb(17, 15, 15);
   border-radius: 0.4rem;
   transition: box-shadow var(--transitionDuration);
@@ -162,7 +166,15 @@ p {
   font-size: 12px;
   color: #999;
   margin-top: 200px;
+
+  border: 1px solid rgb(202, 75, 75);
+  border-radius: 0.4rem;
+  transition: box-shadow var(--transitionDuration);
+  width: 30vw;
+  background: rgba(255, 255, 255, 0.782);
 }
+
+
 .inputButton:active {
   background: rgba(202, 75, 75, 0.3);
 }

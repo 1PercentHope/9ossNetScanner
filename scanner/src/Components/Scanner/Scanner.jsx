@@ -77,7 +77,16 @@ class Scanner extends Component {
     };
 
     return (
-      <div className="scanner">
+
+      <div className="Main">
+        <nav className="navBar">
+          <div className="icon">
+            <h1 className="title">Qr-</h1>
+            <h1 className="title2">Scanner</h1>
+            <button onClick={this.loggingOut}>log out </button>
+          </div>
+        </nav>
+
         <div>
           <QrReader
             // style={previewStyle}

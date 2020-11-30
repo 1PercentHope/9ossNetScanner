@@ -27,12 +27,11 @@ class Scanner extends Component {
 
     if (data !== null && data !== undefined) {
       console.log(data);
-      // let code = data.substring(7);
       let code = data;
       if (code !== undefined) {
         console.log(code);
         axios
-          .delete("http://localhost:5000/thirdp/scan", {
+          .delete("http://192.168.11.111:5000/thirdp/scan", {
             data: { code },
           })
           .then((res) => {
@@ -73,27 +72,19 @@ class Scanner extends Component {
 
   render() {
     const previewStyle = {
-      height: 240,
-      width: 320,
+      height: 150,
+      width: 200,
     };
 
     return (
-      <div className="Main">
-        <nav className="navBar">
-          <div className="icon">
-            <h1 className="title">Qr-</h1>
-            <h1 className="title2">Scanner</h1>
-            <button onClick={this.loggingOut}>log out </button>
-          </div>
-        </nav>
+      <div className="scanner">
         <div>
           <QrReader
-            delay={this.state.delay}
-            style={previewStyle}
+            // style={previewStyle}
             onError={this.handleError}
             onScan={this.handleScan}
             delay={1000}
-            style={{ widht: "100%" }}
+            // style={{ widht: "23%" }}
             resolution={1000}
           />
         </div>
